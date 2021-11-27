@@ -10,9 +10,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(['/settings', '/user'], (req, res) => {
+  res.show('forbidden.html');
+});
+
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
+app.get(['/', '/home'], (req, res) => {
   res.show('index.html');
 });
 
@@ -33,7 +37,7 @@ app.get('/history', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).send('404 not found...');
+  res.status(404).show('error404.html');
 });
 
 app.listen(8000, () => {
