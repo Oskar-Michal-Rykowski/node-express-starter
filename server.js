@@ -36,6 +36,10 @@ app.get('/hello/:name', (req, res) => {
   res.render('hello', { layout: false, name: req.params.name });
 });
 
+app.post('/contact/send-message', (req, res) => {
+  res.json(req.body);
+});
+
 app.use((req, res) => {
   res.status(404).show('error404');
 });
