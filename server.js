@@ -36,6 +36,10 @@ app.get('/history', (req, res) => {
   res.show('history.html');
 });
 
+app.get('/hello/:name', (req, res) => {
+  res.send(`<h1>Hello ${req.params.name}</h1>`);
+});
+
 app.use((req, res) => {
   res.status(404).show('error404.html');
 });
