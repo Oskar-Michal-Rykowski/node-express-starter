@@ -12,6 +12,8 @@ app.use(['/settings', '/user'], (req, res) => {
   res.render('forbidden');
 });
 
+app.use(express.urlencoded({ extended: false }));
+
 app.get(['/', '/home'], (req, res) => {
   res.render('index');
 });
