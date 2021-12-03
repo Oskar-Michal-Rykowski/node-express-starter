@@ -2,3 +2,12 @@ h1 {
   font-weight: lighter;
   font-style: italic;
 }
+
+.dark-layout {
+  background: black;
+  color: yellow;
+}
+
+.dark-layout a {
+  color: yellow;
+}
