@@ -9,6 +9,6 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "node_modules/.bin/nodemon server.js"
+    "start": "nodemon server.js"
   }
 }

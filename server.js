@@ -43,7 +43,7 @@ app.post('/contact/send-message', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).show('error404');
+  res.status(404).render('error404');
 });
 
 app.listen(8000, () => {
