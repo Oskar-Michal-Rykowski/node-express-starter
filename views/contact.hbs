@@ -6,6 +6,9 @@
     {{#if isError}}
     <div class="isError">You can't leave fields empty!</div>
     {{/if}}
+    {{#if uploadedImage}}
+    <img src='/uploads/{{uploadedImage}}'>
+    {{/if}}
 <form action="/contact/send-message" enctype="multipart/form-data" method="post">
   <label>
     Your name: <input type="text" name="author">

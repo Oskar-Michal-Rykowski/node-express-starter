@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('express-handlebars');
 const path = require('path');
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: 'public/uploads' });
 
 const app = express();
 app.engine('hbs', hbs());
@@ -48,7 +48,11 @@ app.post(
     const project = req.file;
 
     if (author && sender && title && message && project) {
-      res.render('contact', { isSent: true, fileName: project.originalname });
+      res.render('contact', {
+        isSent: true,
+        fileName: project.originalname,
+        uploadedImage: project.filename,
+      });
     } else {
       res.render('contact', { isError: true });
     }
