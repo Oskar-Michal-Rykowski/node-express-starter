@@ -100,6 +100,10 @@ button {
   animation-duration: 1s;
 }
 
+.uploadedImage {
+  max-width: 100px;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
